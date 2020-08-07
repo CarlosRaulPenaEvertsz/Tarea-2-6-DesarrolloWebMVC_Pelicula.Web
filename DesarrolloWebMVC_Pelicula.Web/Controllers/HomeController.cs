@@ -55,7 +55,7 @@ namespace DesarrolloWebMVC_Pelicula.Web.Controllers
         {
             
             Models.RegistroPelicula peli = new Models.RegistroPelicula();
-            Models.Pelicula rpt = peli.Recuperar(cod);
+            Models.Pelicula rpt = peli.Recuperar( cod );
             
             return View(rpt);
             
@@ -63,7 +63,6 @@ namespace DesarrolloWebMVC_Pelicula.Web.Controllers
         }
 
         [HttpPost]
-
         public ActionResult Modificacion(FormCollection collection)
         {
             Models.RegistroPelicula peli = new Models.RegistroPelicula();
@@ -75,8 +74,7 @@ namespace DesarrolloWebMVC_Pelicula.Web.Controllers
                 ActorPrincipal = collection["ActorPrincipal"].ToString(),
                 numActores = int.Parse(collection["numActores"].ToString()),
                 Duracion = float.Parse(collection["Duracion"].ToString()),
-                Estreno = int.Parse(collection["Estreno"].ToString()),
-                
+                Estreno = int.Parse(collection["Estreno"].ToString()) 
             };
             
             peli.Modificar(rpt);
