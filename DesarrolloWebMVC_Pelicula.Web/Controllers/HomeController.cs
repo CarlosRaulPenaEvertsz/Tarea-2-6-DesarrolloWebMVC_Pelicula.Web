@@ -51,17 +51,17 @@ namespace DesarrolloWebMVC_Pelicula.Web.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
         public ActionResult Modificacion(int cod)
         {
             
             Models.RegistroPelicula peli = new Models.RegistroPelicula();
             Models.Pelicula rpt = peli.Recuperar( cod );
-            
+            rpt = peli.Recuperar(cod);
             return View(rpt);
             
 
         }
-
         [HttpPost]
         public ActionResult Modificacion(FormCollection collection)
         {

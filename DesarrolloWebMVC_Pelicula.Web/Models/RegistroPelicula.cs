@@ -24,7 +24,7 @@ namespace DesarrolloWebMVC_Pelicula.Web.Models
         public int GrabarPelicula( Pelicula peli)
         {
             Conectar();
-            SqlCommand comando = new SqlCommand("Insert Into TBL_PELICULA (Codigo, Titulo, Director, ActorPrincipal, No_Actores, Duracion, Estreno) " +
+            SqlCommand comando = new SqlCommand("Insert Into TBL_PELICULA_T2_6 (Codigo, Titulo, Director, ActorPrincipal, No_Actores, Duracion, Estreno) " +
                                                 "Values (@Codigo, @Titulo, @Director, @ActorPrincipal, @No_Actores, @Duracion, @Estreno)", con);
             /* types */
             comando.Parameters.Add("@Titulo",SqlDbType.VarChar);
@@ -56,7 +56,7 @@ namespace DesarrolloWebMVC_Pelicula.Web.Models
             Conectar();
             List<Pelicula> peliculas = new List<Pelicula>(); 
 
-            SqlCommand com = new SqlCommand("Select Codigo, Titulo, Director, ActorPrincipal, No_Actores, Duracion, Estreno From TBL_PELICULA", con);
+            SqlCommand com = new SqlCommand("Select Codigo, Titulo, Director, ActorPrincipal, No_Actores, Duracion, Estreno From TBL_PELICULA_T2_6", con);
             con.Open();
             SqlDataReader registros = com.ExecuteReader(); 
             while (registros.Read())
@@ -82,7 +82,7 @@ namespace DesarrolloWebMVC_Pelicula.Web.Models
         {
             Conectar();
             SqlCommand comando = new SqlCommand("Select Codigo, Titulo, Director, ActorPrincipal, No_Actores, Duracion, Estreno " +
-                                               "From TBL_PELICULA where Codigo = @Codigo", con);
+                                               "From TBL_PELICULA_T2_6 where Codigo = @Codigo", con);
             comando.Parameters.Add("@Codigo", SqlDbType.Int);
             comando.Parameters["@Codigo"].Value = codigo;
             con.Open();
@@ -106,8 +106,9 @@ namespace DesarrolloWebMVC_Pelicula.Web.Models
         public int Modificar(Pelicula peli)
         {
             Conectar();
-            SqlCommand comando = new SqlCommand("Update TBL_PELICULA set Titulo=@Titulo, Director=@Director, ActorPrincipal=@ActorPrincipal, No_Actores=@No_Actores, Duracion=@Duracion, " +
-                                                "Estreno=@Estreno where Codigo = @Codigo ", con);
+            SqlCommand comando = new SqlCommand("Update TBL_PELICULA_T2_6 set Codigo=@Codigo, Titulo=@Titulo, Director=@Director, " +
+                                                   "ActorPrincipal=@ActorPrincipal, No_Actores=@No_Actores, Duracion=@Duracion, " +
+                                                   "Estreno=@Estreno where Codigo = @Codigo ", con);
         /* types */
             comando.Parameters.Add("@Codigo", SqlDbType.Int);
             comando.Parameters.Add("@Titulo", SqlDbType.VarChar);
@@ -116,8 +117,8 @@ namespace DesarrolloWebMVC_Pelicula.Web.Models
             comando.Parameters.Add("@No_Actores", SqlDbType.Int);
             comando.Parameters.Add("@Duracion", SqlDbType.Float);
             comando.Parameters.Add("@Estreno", SqlDbType.Int);
-        /* data */
-            comando.Parameters["@Codigo"].Value = peli.Titulo;
+            /* data */
+            comando.Parameters["@Codigo"].Value = peli.Codigo;
             comando.Parameters["@Titulo"].Value = peli.Titulo;
             comando.Parameters["@Director"].Value = peli.Director;
             comando.Parameters["@ActorPrincipal"].Value = peli.ActorPrincipal;
@@ -135,7 +136,7 @@ namespace DesarrolloWebMVC_Pelicula.Web.Models
         public int Borrar( int codigo)
         {
             Conectar();
-            SqlCommand comando = new SqlCommand("Delete from TBL_PELICULA where Codigo=@Codigo", con);
+            SqlCommand comando = new SqlCommand("Delete from TBL_PELICULA_T2_6 where Codigo=@Codigo", con);
             comando.Parameters.Add("@Codigo", SqlDbType.Int);
             comando.Parameters["@Codigo"].Value = codigo;
             con.Open();
