@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [PeliculasDB]    Script Date: Aug/7/2020 10:15:13 PM ******/
+/****** Object:  Database [PeliculasDB]    Script Date: Aug/9/2020 12:52:03 PM ******/
 CREATE DATABASE [PeliculasDB]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -77,7 +77,7 @@ ALTER DATABASE [PeliculasDB] SET QUERY_STORE = OFF
 GO
 USE [PeliculasDB]
 GO
-/****** Object:  Table [dbo].[TBL_PELICULA]    Script Date: Aug/7/2020 10:15:13 PM ******/
+/****** Object:  Table [dbo].[TBL_PELICULA]    Script Date: Aug/9/2020 12:52:03 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -96,7 +96,7 @@ CREATE TABLE [dbo].[TBL_PELICULA](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TBL_PELICULA_T2_6]    Script Date: Aug/7/2020 10:15:13 PM ******/
+/****** Object:  Table [dbo].[TBL_PELICULA_T2_6]    Script Date: Aug/9/2020 12:52:04 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -123,7 +123,7 @@ INSERT [dbo].[TBL_PELICULA_T2_6] ([Codigo], [Titulo], [Director], [ActorPrincipa
 INSERT [dbo].[TBL_PELICULA_T2_6] ([Codigo], [Titulo], [Director], [ActorPrincipal], [No_Actores], [Duracion], [Estreno]) VALUES (2, N'The Shawshank', N'Frank Darabont', N'Morgan Freeman', 15, 3, 1972)
 INSERT [dbo].[TBL_PELICULA_T2_6] ([Codigo], [Titulo], [Director], [ActorPrincipal], [No_Actores], [Duracion], [Estreno]) VALUES (3, N'The Matrix', N'Lana Wachowski', N'Keanu Reeves', 15, 2.3, 1999)
 INSERT [dbo].[TBL_PELICULA_T2_6] ([Codigo], [Titulo], [Director], [ActorPrincipal], [No_Actores], [Duracion], [Estreno]) VALUES (4, N'City of God', N'Fernando Meirelles', N'Alexandre Rodrigues', 10, 3, 2002)
-INSERT [dbo].[TBL_PELICULA_T2_6] ([Codigo], [Titulo], [Director], [ActorPrincipal], [No_Actores], [Duracion], [Estreno]) VALUES (5, N'Star Wars: Episode IV', N'George Lucas', N'Harrison Ford', 20, 2.4, 2007)
+INSERT [dbo].[TBL_PELICULA_T2_6] ([Codigo], [Titulo], [Director], [ActorPrincipal], [No_Actores], [Duracion], [Estreno]) VALUES (5, N'Star Wars: Episode IV', N'George Lucas', N'Harrison Ford', 20, 2.4000000953674316, 2007)
 USE [master]
 GO
 ALTER DATABASE [PeliculasDB] SET  READ_WRITE 
